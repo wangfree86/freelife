@@ -3,6 +3,7 @@ apply plugin: 'com.neenbedankt.android-apt'//增加这一句
 
 apply plugin: 'me.tatarka.retrolambda'
 
+def dbflow_version = "3.0.0-beta4"
 android {
     compileSdkVersion 25
     buildToolsVersion "24.0.1"
@@ -44,5 +45,9 @@ dependencies {
     provided 'org.glassfish:javax.annotation:10.0-b28'
 
     compile 'com.google.code.gson:gson:2.4'
+
+    apt "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
+    compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
+    compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
 
 }
