@@ -9,8 +9,15 @@ import android.app.Application;
  * @2016-12-05:10:07
  */
 public class FreeLifeApplication  extends Application {
+    private static FreeLifeApplication mInstance;
     @Override
     public void onCreate () {
         super.onCreate();
+        mInstance = this;
+    }
+
+
+    public static FreeLifeApplication get () {
+        return mInstance;
     }
 }

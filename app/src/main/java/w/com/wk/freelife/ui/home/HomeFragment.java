@@ -57,7 +57,7 @@ public class HomeFragment extends BaseFragment {
     protected View initView(LayoutInflater inflater, ViewGroup container) {
         View view = inflater.inflate(R.layout.fragment_home, null);
         //绑定fragment
-        ButterKnife.bind(this, view);
+//        ButterKnife.bind(this, view);
         return view;
     }
 
