@@ -1,5 +1,6 @@
 package w.com.wk.freelife.base;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -46,6 +47,14 @@ public abstract class BaseFragment extends Fragment implements OnClickListener {
         return view;
     }
 
+    protected void intent2Activity(Class<? extends Activity> tarActivity) {
+        Intent intent = new Intent(context, tarActivity);
+        startActivity(intent);
+    }protected void intent2Activity(Class<? extends Activity> tarActivity,Bundle bundle) {
+        Intent intent = new Intent(context, tarActivity);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
     @Override
     public void onDestroy() {
         super.onDestroy();

@@ -21,7 +21,7 @@ public class UserManager {
 
 
   public void test(final @NonNull Context context) {
-    ToastUtils.showToast("test");
+//    ToastUtils.showToast("test");
   }
 
 

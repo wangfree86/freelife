@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">自由生活</string>
+    <string name="home">首页</string>
+    <string name="know">知识</string>
+    <string name="widget">工具</string>
+    <string name="my">我的</string>
+    <string name="er">wer</string>
+    <string name="hold">收藏</string>
+    <string name="种类">kind</string>
+    <string name="kind">种类</string>
+    <string name="time">时间</string>
+    <string name="list_name">清单名称</string>
+
+
+    <string name="str_just">刚刚</string>
+    <string name="str_above_minutes">%d分钟前</string>
+    <string name="str_above_hour">%d小时前</string>
+    <string name="str_above_day">%d日前</string>
+    <string name="str_above_month">%d月前</string>
+
+    <string name="str_day">%d天</string>
+    <string name="str_hour">%d小时</string>
+    <string name="str_minute">%d分钟</string>
+    <string name="str_month_day_format">M月-d日</string>
 </resources>

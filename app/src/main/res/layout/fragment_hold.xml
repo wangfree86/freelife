@@ -1,19 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-     android:text="hh" />
 
-    <Button
-        android:text="Button"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"/>
+        android:layout_height="match_parent">
 
+        <TextView
+            android:text="@string/kind"
+            android:layout_width="83dp"
+            android:layout_height="52dp"
+            android:id="@+id/name"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="72dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="72dp"/>
+
+        <TextView
+            android:text="@string/time"
+            android:layout_width="78dp"
+            android:layout_height="52dp"
+            android:id="@+id/time"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/name"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginEnd="72dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="72dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/gold_button_heart"
+            android:id="@+id/add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="64dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="24dp"
+            />
+
+        <ListView
+            android:layout_width="384dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/lv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time"/>
+
+    </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>

@@ -50,4 +50,6 @@ dependencies {
     compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
 
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta3'
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
 }

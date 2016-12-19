@@ -4,4 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000000</color>
+
+    <color name="titile_bar">#FAFAFA</color>
+    <!-- 统一黄色-->
+    <color name="yellow">#FFDB00</color>
+
+    <color name="black_title">#2E2E2E</color>
 </resources>

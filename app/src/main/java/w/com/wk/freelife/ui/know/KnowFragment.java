@@ -29,7 +29,7 @@ public class KnowFragment extends BaseFragment {
     @Override
     protected View initView(LayoutInflater inflater, ViewGroup container) {
         View view = inflater.inflate(R.layout.fragment_home, null);
-        find();
+      //  find();
         return view;
     }
 

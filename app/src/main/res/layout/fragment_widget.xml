@@ -1,13 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-     android:text="ww" />
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="复利计算器"/>
 
+    <LinearLayout
+
+        style="@style/widget_l">
+
+        <TextView
+            style="@style/widget_tv"
+            android:text="本金:"/>
+
+        <EditText
+            android:text="1"
+            android:id="@+id/et_money"
+            style="@style/widget_et_number"
+            android:layout_width="179dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/widget_l">
+
+        <TextView
+            style="@style/widget_tv"
+            android:text="百分比:"/>
+
+        <EditText
+            android:text="10"
+            android:id="@+id/et_per"
+            style="@style/widget_et_number"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/widget_l">
+
+        <TextView
+            style="@style/widget_tv"
+            android:text="年:"/>
+
+        <EditText
+            android:text="10"
+            android:id="@+id/et_year"
+            style="@style/widget_et_number"/>
+
+    </LinearLayout>
+
+    <Button
+
+        android:id="@+id/bt"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:text="计算"/>
+
+    <ListView
+        android:layout_marginBottom="100dp"
+        android:id="@+id/lv_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ListView>
+
+    <ImageView
+        android:layout_width="1dp"
+        android:layout_height="2dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/imageView"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"/>
 
 </LinearLayout>

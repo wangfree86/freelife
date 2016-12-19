@@ -1,29 +1,31 @@
 package w.com.wk.freelife.ui.hold;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
+import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
-import com.google.gson.Gson;
+import com.raizlabs.android.dbflow.sql.language.Select;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import w.com.wk.freelife.CommonAdapter;
 import w.com.wk.freelife.R;
 import w.com.wk.freelife.base.BaseFragment;
+import w.com.wk.freelife.bean.Common;
+import w.com.wk.freelife.db.ListAll;
+import w.com.wk.freelife.db.People;
 
-import w.com.wk.freelife.di.DaggerAppComponent;
-import w.com.wk.freelife.manager.UserManager;
+import static android.R.attr.onClick;
 
 /**
  * @author WK
@@ -33,96 +35,76 @@ import w.com.wk.freelife.manager.UserManager;
  */
 public class HoldFragment extends BaseFragment {
 
-    @BindView(R.id.button)
-    Button mButton;
-    //添加@Inject注解，表示这个mPoetry是需要注入的
-    @Inject
-    UserManager mUserManager;
 
-
-    @Inject
-    Gson g;
+    @BindView(R.id.name)
+    TextView mKind;
+    @BindView(R.id.time)
+    TextView mTime;
+    @BindView(R.id.add)
+    ImageView mAdd;
+    @BindView(R.id.lv)
+    ListView mLv;
+    List<Common> lc = new ArrayList<Common>();
+    CommonAdapter mCommonAdapter;
 
     @Override
     protected View initView(LayoutInflater inflater, ViewGroup container) {
 
-        View view = inflater.inflate(R.layout.fragment_hold, null);
-        // 使用Dagger2生成的类 生成组件进行构造，并注入
-        DaggerAppComponent.builder()
-                .build()
-                .inject(this);
-        return view;
-    }
-
-    @Override
-    protected void initData() {
-
-    }
-
-    @Override
-    public void onClick(View view) {
-
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        View rootView = inflater.inflate(R.layout.fragment_hold, null);
         ButterKnife.bind(this, rootView);
         return rootView;
     }
 
-    @OnClick(R.id.button)
-    public void onClick() {
-        List<Person> persons = new ArrayList<Person>();
-        for (int i = 0; i < 10; i++) {
-            Person p = new Person();
-            p.setName("name" + i);
-            p.setAge(i * 5);
-            persons.add(p);
-        }
-        HashMap     hashmap     =     new     HashMap();
-        hashmap.put("Item0",     "Value0");
-        Toast.makeText(getActivity(), g.toJson(hashmap), Toast.LENGTH_SHORT).show();
-      //  mUserManager.test(context);
+    @Override
+    protected void initData() {
+        RefData();
+        mLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Bundle bundle = new Bundle();
+                bundle.putLong("allid", lc.get(i).id);
+                intent2Activity(ListDetailActivtiy.class, bundle);
+            }
+
+
+        });
+
     }
 
-     class Person {
-
-        private String name;
-        private int age;
-
-        /**
-         * @return the name
-         */
-        public String getName() {
-            return name;
+    private void RefData() {
+        lc.clear();
+        List<ListAll> lis = new Select().from(ListAll.class).queryList();
+        for (int i = 0; i < lis.size(); i++) {
+            ListAll l = lis.get(i);
+            Common c = new Common();
+            c.y = l.time + "";
+            c.m = l.name;
+            c.id = l.id ;
+            lc.add(c);
         }
+        mCommonAdapter = new CommonAdapter(context, lc);
+        mCommonAdapter.setAllList(true);
+        mLv.setAdapter(mCommonAdapter);
+    }
 
-        /**
-         * @param name the name to set
-         */
-        public void setName(String name) {
-            this.name = name;
-        }
+    @Override
+    public void onResume() {
+        super.onResume();
+        RefData();
+    }
 
-        /**
-         * @return the age
-         */
-        public int getAge() {
-            return age;
-        }
-
-        /**
-         * @param age the age to set
-         */
-        public void setAge(int age) {
-            this.age = age;
-        }
-
-        @Override
-        public String toString()
-        {
-            return name + ":" +age;
+    @OnClick({R.id.name, R.id.time, R.id.add})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.name:
+                RefData();
+                break;
+            case R.id.time:
+                RefData();
+                break;
+            case R.id.add:
+                intent2Activity(NewListActivtiy.class);
+                break;
         }
     }
 }
