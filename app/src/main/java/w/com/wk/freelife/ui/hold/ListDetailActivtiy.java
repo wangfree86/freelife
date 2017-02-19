@@ -3,24 +3,19 @@ package w.com.wk.freelife.ui.hold;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.raizlabs.android.dbflow.sql.language.Select;
-
-import org.eclipse.jdt.internal.compiler.batch.Main;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import w.com.wk.freelife.CommonAdapter;
+import w.com.wk.freelife.adapter.CommonAdapter;
 import w.com.wk.freelife.R;
 import w.com.wk.freelife.base.BaseActivity;
 import w.com.wk.freelife.bean.Common;
@@ -28,11 +23,9 @@ import w.com.wk.freelife.db.ListAll;
 import w.com.wk.freelife.db.ListAll_Table;
 import w.com.wk.freelife.db.ListDetail;
 import w.com.wk.freelife.db.ListDetail_Table;
-import w.com.wk.freelife.db.People_Table;
 import w.com.wk.freelife.utils.DateTool;
 
 import static android.media.CamcorderProfile.get;
-import static w.com.wk.freelife.R.id.all;
 
 /**
  * @author WK

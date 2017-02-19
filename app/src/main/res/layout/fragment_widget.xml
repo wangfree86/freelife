@@ -5,74 +5,24 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:text="复利计算器"/>
-
-    <LinearLayout
-
-        style="@style/widget_l">
-
-        <TextView
-            style="@style/widget_tv"
-            android:text="本金:"/>
-
-        <EditText
-            android:text="1"
-            android:id="@+id/et_money"
-            style="@style/widget_et_number"
-            android:layout_width="179dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <LinearLayout
-        style="@style/widget_l">
-
-        <TextView
-            style="@style/widget_tv"
-            android:text="百分比:"/>
-
-        <EditText
-            android:text="10"
-            android:id="@+id/et_per"
-            style="@style/widget_et_number"/>
-    </LinearLayout>
-
-    <LinearLayout
-        style="@style/widget_l">
-
-        <TextView
-            style="@style/widget_tv"
-            android:text="年:"/>
-
-        <EditText
-            android:text="10"
-            android:id="@+id/et_year"
-            style="@style/widget_et_number"/>
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/bt_interest"
+        style="@style/bt1"
+        android:text="计算interest"/>
 
     <Button
+        android:id="@+id/bt_think"
 
-        android:id="@+id/bt"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:text="计算"/>
+        style="@style/bt1"
+        android:text="mingxiang"/>
 
-    <ListView
-        android:layout_marginBottom="100dp"
-        android:id="@+id/lv_all"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></ListView>
-
-    <ImageView
-        android:layout_width="1dp"
-        android:layout_height="2dp"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:id="@+id/imageView"
-        android:adjustViewBounds="false"
-        android:cropToPadding="false"/>
+    <Button
+        android:id="@+id/bt_music"
+        style="@style/bt1"
+        android:text="bt_music"/>
+    <Button
+        android:id="@+id/bt_exercise"
+        style="@style/bt1"
+        android:text="bt_exercise"/>
 
 </LinearLayout>

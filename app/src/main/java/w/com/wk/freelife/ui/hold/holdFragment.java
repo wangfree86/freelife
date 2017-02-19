@@ -1,6 +1,5 @@
 package w.com.wk.freelife.ui.hold;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,14 +17,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import w.com.wk.freelife.CommonAdapter;
+import w.com.wk.freelife.adapter.CommonAdapter;
 import w.com.wk.freelife.R;
 import w.com.wk.freelife.base.BaseFragment;
 import w.com.wk.freelife.bean.Common;
 import w.com.wk.freelife.db.ListAll;
-import w.com.wk.freelife.db.People;
-
-import static android.R.attr.onClick;
 
 /**
  * @author WK

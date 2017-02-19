@@ -9,7 +9,7 @@ android {
     buildToolsVersion "24.0.1"
     defaultConfig {
         applicationId "w.com.wk.freelife"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -39,17 +39,19 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.jakewharton:butterknife:8.1.0'//增加这一句
     apt 'com.jakewharton:butterknife-compiler:8.1.0'//增加这一句
-
     provided 'com.google.dagger:dagger-compiler:2.4'
     compile 'com.google.dagger:dagger:2.4'
     provided 'org.glassfish:javax.annotation:10.0-b28'
-
     compile 'com.google.code.gson:gson:2.4'
-
     apt "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
-
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta3'
     compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    compile 'com.android.support:recyclerview-v7:+'
+    compile 'com.joybar.calendar:librarycalendar:1.0.5'
+    //    使用cardview控件
+    compile 'com.android.support:cardview-v7:+'
+    compile 'com.github.bumptech.glide:glide:+'
+
 }

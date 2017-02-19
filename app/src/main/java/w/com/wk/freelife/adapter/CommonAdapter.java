@@ -1,4 +1,4 @@
-package w.com.wk.freelife;
+package w.com.wk.freelife.adapter;
 
 import android.content.Context;
 import android.icu.text.DateFormat;
@@ -16,6 +16,7 @@ import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import w.com.wk.freelife.R;
 import w.com.wk.freelife.base.PithyBaseAdapter;
 import w.com.wk.freelife.bean.Common;
 import w.com.wk.freelife.utils.DateTool;

@@ -95,6 +95,7 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
      * @param msg
      */
     protected void showToast(String msg) {
+
         ToastUtils.showToast(msg);
     }
 
